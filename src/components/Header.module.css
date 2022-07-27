@@ -4,4 +4,27 @@
 	flex-direction: row;
 	background-color: beige;
 	height: 10vh;
+	padding-right: 50px;
+	justify-content: flex-end;
+}
+
+.headerButton {
+	display: flex;
+	padding: 10px;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-decoration: unset;
+	text-transform: uppercase;
+}
+
+.headerButton:hover {
+	cursor: pointer;
+}
+.headerButton:visited {
+	/* color: unset; */
+}
+
+.headerButtonActive {
+	color: blue;
 }
