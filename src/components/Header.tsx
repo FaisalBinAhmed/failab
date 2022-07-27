@@ -11,3 +11,7 @@ const Header: Component = () => {
 };
 
 export default Header;
+
+export const HeaderButton: Component = () => {
+	return <></>;
+};
