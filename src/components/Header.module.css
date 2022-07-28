@@ -2,7 +2,7 @@
 	display: flex;
 	flex: 1;
 	flex-direction: row;
-	background-color: beige;
+	/* background-color: beige; */
 	height: 10vh;
 	padding-right: 50px;
 	justify-content: flex-end;
@@ -21,8 +21,8 @@
 .headerButton:hover {
 	cursor: pointer;
 }
-.headerButton:visited {
-	/* color: unset; */
+*:visited {
+	color: unset;
 }
 
 .headerButtonActive {

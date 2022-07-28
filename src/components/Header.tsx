@@ -11,16 +11,26 @@ const Header: Component = () => {
 					<NavLink
 						class={styles.headerButton}
 						activeClass={styles.headerButtonActive}
+						end
 						href="/">
 						Home
 					</NavLink>
-					<NavLink class={styles.headerButton} href="/apps">
+					<NavLink
+						class={styles.headerButton}
+						activeClass={styles.headerButtonActive}
+						href="/apps">
 						Apps
 					</NavLink>
-					<NavLink class={styles.headerButton} href="/contact">
+					<NavLink
+						class={styles.headerButton}
+						activeClass={styles.headerButtonActive}
+						href="/contact">
 						Contact
 					</NavLink>
-					<NavLink class={styles.headerButton} href="/about">
+					<NavLink
+						class={styles.headerButton}
+						activeClass={styles.headerButtonActive}
+						href="/about">
 						About
 					</NavLink>
 				</nav>
