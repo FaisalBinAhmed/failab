@@ -7,11 +7,14 @@ const HomeScreen: Component = () => {
 	return (
 		<div class={styles.App}>
 			<div class={styles.hero}>
-				<img src={failogo} height={200} width={200} />
-				<div>
-					<h1>Failab</h1>
+				<img class={styles.heroLogo} src={failogo} />
+				<div class={styles.heroText}>
+					<p class={styles.heroTitle}>Failab</p>
+					<p>insert subtitle here</p>
+					<p>insert social links</p>
 				</div>
 			</div>
+			<div class={styles.carouselContainer}></div>
 		</div>
 	);
 };
