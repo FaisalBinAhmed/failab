@@ -1,0 +1,8 @@
+.socialButton {
+	padding: 0px 20px 0px 20px;
+	border-radius: 30px;
+	border-width: 2px;
+	cursor: pointer;
+	border-style: solid;
+	margin-right: 10px;
+}

@@ -7,21 +7,8 @@
 	align-items: center;
 }
 
-@media screen and (min-width: 30em) {
-	.hero {
-		justify-content: center;
-		flex-direction: row;
-	}
-
-	.heroLogo {
-		margin-right: 0;
-		max-height: unset;
-		height: max-content;
-	}
-}
-
 .heroLogo {
-	margin-right: 5vw;
+	margin: 25px;
 	max-height: 20vh;
 }
 
@@ -33,6 +20,11 @@
 
 .heroTitle {
 	font-size: 50px;
+	margin: 10px;
+}
+
+.subtitle {
+	margin: 10px;
 }
 
 .carouselContainer {
@@ -45,4 +37,29 @@
 	justify-content: center;
 	/* padding-top: 25px;
 	padding-bottom: 25px; */
+}
+
+.socialContainer {
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+	width: 100%;
+	justify-content: center;
+}
+
+/* desktop breakpoint */
+@media screen and (min-width: 40em) {
+	.hero {
+		justify-content: center;
+		flex-direction: row;
+	}
+
+	.heroLogo {
+		margin-right: 20px;
+		max-height: unset;
+		height: max-content;
+	}
+	.socialContainer {
+		justify-content: flex-start;
+	}
 }

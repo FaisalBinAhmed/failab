@@ -1,5 +1,6 @@
 import type { Component } from "solid-js";
 import failogo from "../assets/failab.webp";
+import SocialButton from "../components/SocialButton";
 
 import styles from "./HomeScreen.module.css";
 
@@ -10,8 +11,13 @@ const HomeScreen: Component = () => {
 				<img class={styles.heroLogo} src={failogo} />
 				<div class={styles.heroText}>
 					<p class={styles.heroTitle}>Failab</p>
-					<p>insert subtitle here</p>
-					<p>insert social links</p>
+					<p class={styles.subtitle}>
+						Hobby projects + commercial app quality = Failab Apps
+					</p>
+					<div class={styles.socialContainer}>
+						<SocialButton title="Follow Us" color="blue" />
+						<SocialButton title="Contact" color="green" />
+					</div>
 				</div>
 			</div>
 			<div class={styles.carouselContainer}></div>
