@@ -1,5 +1,6 @@
 import type { Component } from "solid-js";
 import failogo from "../assets/failab.webp";
+import Carousel from "../components/Carousel";
 import SocialButton from "../components/SocialButton";
 
 import styles from "./HomeScreen.module.css";
@@ -20,7 +21,9 @@ const HomeScreen: Component = () => {
 					</div>
 				</div>
 			</div>
-			<div class={styles.carouselContainer}></div>
+			<div class={styles.carouselContainer}>
+				<Carousel />
+			</div>
 		</div>
 	);
 };
