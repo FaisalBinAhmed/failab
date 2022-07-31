@@ -17,7 +17,9 @@
 
 .carouselHero {
 	max-width: 90vw;
+	padding-bottom: 10px;
 	/* max-height: 30em; */
+	/* border-radius: 10px; */
 }
 
 .carouselDetails {
@@ -38,6 +40,19 @@
 	margin: 0px;
 }
 
+.storeLinks {
+	display: flex;
+	flex-direction: row;
+	margin-top: 10px;
+}
+
+.storeLinks > img {
+	max-width: 30vw;
+	margin-right: 10px;
+}
+
+/* strip related */
+
 .strip {
 	width: 100vw;
 	display: flex;
@@ -53,6 +68,7 @@
 	/* background-color: beige; */
 	padding: 10px;
 	align-items: center;
+	cursor: pointer;
 }
 
 .stripCard > img {
@@ -83,5 +99,15 @@
 	.carouselDetails {
 		width: 33vw;
 		padding-left: 2.5vw;
+	}
+	.carouselDetails > p {
+		margin-top: 10px;
+	}
+
+	.storeLinks {
+		margin-top: 5vh;
+	}
+	.storeLinks > img {
+		max-width: 15vw;
 	}
 }

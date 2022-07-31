@@ -5,10 +5,14 @@ import {
 	createSignal,
 	onCleanup,
 	onMount,
+	Setter,
 } from "solid-js";
 
 import tabiusHero from "../assets/tabius/tabius-hero.png";
 import tabiusLogo from "../assets/tabius/tabius-logo.jpeg";
+
+import appstore from "../assets/appstore.png";
+import playstore from "../assets/playstore.png";
 
 import { carouselData } from "../../data/carouselData";
 import styles from "./Carousel.module.css";
@@ -45,6 +49,10 @@ const Carousel: Component = () => {
 					style={{ color: carouselData[selectedAppId()].fontColor ?? "white" }}>
 					<h1>{carouselData[selectedAppId()].title}</h1>
 					<p>{carouselData[selectedAppId()].description}</p>
+					<div class={styles.storeLinks}>
+						<img src={appstore} />
+						<img src={playstore} />
+					</div>
 				</div>
 			</div>
 			<div class={styles.strip}>
@@ -53,6 +61,7 @@ const Carousel: Component = () => {
 						<StripCard
 							id={item.id}
 							selectedID={selectedAppId}
+							setSelectedID={setSelectedAppId}
 							title={item.title}
 							tag={item.tag}
 						/>
@@ -69,11 +78,13 @@ const StripCard: Component<{
 	title: string;
 	tag: string;
 	selectedID: Accessor<number>;
-}> = ({ id, logo, title, tag, selectedID }) => {
+	setSelectedID: Setter<number>;
+}> = ({ id, logo, title, tag, selectedID, setSelectedID }) => {
 	return (
 		<div
 			class={styles.stripCard}
-			style={{ "background-color": selectedID() === id ? "grey" : "white" }}>
+			onClick={() => setSelectedID(id)}
+			style={{ "background-color": selectedID() === id ? "#fae7e1" : "white" }}>
 			<img src={tabiusLogo} />
 			<div class={styles.stripDetails}>
 				<p>{title}</p>

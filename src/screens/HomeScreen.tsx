@@ -26,6 +26,7 @@ const HomeScreen: Component = () => {
 			</div>
 
 			<div class={styles.feedbackContainer}></div>
+			<div class={styles.footerContainer}></div>
 		</div>
 	);
 };
