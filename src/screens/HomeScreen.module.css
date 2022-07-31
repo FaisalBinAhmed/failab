@@ -5,6 +5,7 @@
 	width: 100%;
 	/* max-height: 40vh; */
 	align-items: center;
+	margin-bottom: 2.5vh;
 }
 
 .heroLogo {
@@ -47,6 +48,18 @@
 	justify-content: center;
 }
 
+.feedbackContainer {
+	display: flex;
+	flex-direction: row;
+	background-color: #f0efeb;
+	width: 100%;
+	min-height: 50vh;
+	align-items: center;
+	justify-content: center;
+	/* padding-top: 25px;
+	padding-bottom: 25px; */
+}
+
 /* desktop breakpoint */
 @media screen and (min-width: 40em) {
 	.hero {
@@ -57,7 +70,7 @@
 	.heroLogo {
 		margin-right: 20px;
 		max-height: unset;
-		height: max-content;
+		height: 20vw;
 	}
 	.socialContainer {
 		justify-content: flex-start;

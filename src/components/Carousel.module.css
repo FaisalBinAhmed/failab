@@ -1,17 +1,87 @@
-.mainCarouselContainer {
+.carousel {
+	/* padding: 5vw; */
 	display: flex;
-	padding: 30px;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+}
+
+.mainCarouselContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 90vw;
+	padding: 5vw;
 }
 
 .carouselHero {
-	max-width: 80vw;
+	max-width: 90vw;
 	/* max-height: 30em; */
 }
 
 .carouselDetails {
 	display: flex;
-	padding: 20px;
+	/* padding: 20px; */
 	flex-direction: column;
+	/* color: white; */
+	width: 90vw;
+	padding-top: 10px;
+	/* align-items: flex-start; */
+}
+
+.carouselDetails > h1 {
+	margin: 0px;
+}
+
+.carouselDetails > p {
+	margin: 0px;
+}
+
+.strip {
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	/* background-color: antiquewhite; */
+	overflow: scroll;
+}
+
+.stripCard {
+	display: flex;
+	flex-direction: row;
+	width: 40vw;
+	/* background-color: beige; */
+	padding: 10px;
+	align-items: center;
+}
+
+.stripCard > img {
+	width: 50px;
+	height: 50px;
+}
+
+.stripDetails {
+	display: flex;
+	flex-direction: column;
+	padding-left: 10px;
+}
+
+.stripDetails > p {
+	margin: unset;
+}
+
+/* desktop breakpoint */
+@media screen and (min-width: 40em) {
+	.mainCarouselContainer {
+		flex-direction: row;
+		justify-content: center;
+	}
+	.carouselHero {
+		max-width: 33vw;
+		padding-right: 2.5vw;
+	}
+	.carouselDetails {
+		width: 33vw;
+		padding-left: 2.5vw;
+	}
 }

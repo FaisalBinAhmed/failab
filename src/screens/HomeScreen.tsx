@@ -1,5 +1,5 @@
 import type { Component } from "solid-js";
-import failogo from "../assets/failab.webp";
+import failogo from "../Failab.svg";
 import Carousel from "../components/Carousel";
 import SocialButton from "../components/SocialButton";
 
@@ -24,6 +24,8 @@ const HomeScreen: Component = () => {
 			<div class={styles.carouselContainer}>
 				<Carousel />
 			</div>
+
+			<div class={styles.feedbackContainer}></div>
 		</div>
 	);
 };

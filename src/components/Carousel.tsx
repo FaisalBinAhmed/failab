@@ -1,4 +1,5 @@
 import {
+	Accessor,
 	Component,
 	createEffect,
 	createSignal,
@@ -9,61 +10,8 @@ import {
 import tabiusHero from "../assets/tabius/tabius-hero.png";
 import tabiusLogo from "../assets/tabius/tabius-logo.jpeg";
 
+import { carouselData } from "../../data/carouselData";
 import styles from "./Carousel.module.css";
-
-interface StoreItems {
-	storeType: "macOS" | "chrome" | "edge" | "play";
-	link: string;
-}
-
-interface CarouselItem {
-	id: number;
-	title: string;
-	heroThumb: string;
-	icon: string;
-	description: string;
-	color: string;
-	storeLinks: StoreItems[] | StoreItems;
-}
-
-const dummyAppData: CarouselItem[] = [
-	{
-		id: 0,
-		title: "Tabius",
-		heroThumb: "assets/tabius.jpeg",
-		icon: "assets/tabius-small.jpeg",
-		description: "Tab Grouping Assistant for Chrome and Microsoft Edge",
-		color: "blue",
-		storeLinks: [
-			{
-				storeType: "chrome",
-				link: "",
-			},
-			{
-				storeType: "edge",
-				link: "",
-			},
-		],
-	},
-	{
-		id: 1,
-		title: "Tabius",
-		heroThumb: "assets/tabius.jpeg",
-		icon: "assets/tabius-small.jpeg",
-		description: "Tab Grouping Assistant for Chrome and Microsoft Edge",
-		color: "#6b69d6",
-		storeLinks: [
-			{
-				storeType: "chrome",
-				link: "",
-			},
-			{
-				storeType: "edge",
-				link: "",
-			},
-		],
-	},
-];
 
 const Carousel: Component = () => {
 	const [selectedAppId, setSelectedAppId] = createSignal<number>(0);
@@ -72,8 +20,8 @@ const Carousel: Component = () => {
 
 	const interval = () => {
 		intervalID = setInterval(() => {
-			console.log("currentID: ", selectedAppId());
-			if (selectedAppId() === dummyAppData.length - 1) {
+			// console.log("currentID: ", selectedAppId());
+			if (selectedAppId() === carouselData.length - 1) {
 				setSelectedAppId(0);
 			} else {
 				setSelectedAppId(selectedAppId() + 1);
@@ -87,13 +35,49 @@ const Carousel: Component = () => {
 	});
 
 	return (
+		<div class={styles.carousel}>
+			<div
+				class={styles.mainCarouselContainer}
+				style={{ "background-color": carouselData[selectedAppId()].color }}>
+				<img class={styles.carouselHero} src={tabiusHero} />
+				<div
+					class={styles.carouselDetails}
+					style={{ color: carouselData[selectedAppId()].fontColor ?? "white" }}>
+					<h1>{carouselData[selectedAppId()].title}</h1>
+					<p>{carouselData[selectedAppId()].description}</p>
+				</div>
+			</div>
+			<div class={styles.strip}>
+				{carouselData.map((item) => {
+					return (
+						<StripCard
+							id={item.id}
+							selectedID={selectedAppId}
+							title={item.title}
+							tag={item.tag}
+						/>
+					);
+				})}
+			</div>
+		</div>
+	);
+};
+
+const StripCard: Component<{
+	id: number;
+	logo?: string;
+	title: string;
+	tag: string;
+	selectedID: Accessor<number>;
+}> = ({ id, logo, title, tag, selectedID }) => {
+	return (
 		<div
-			class={styles.mainCarouselContainer}
-			style={{ "background-color": dummyAppData[selectedAppId()].color }}>
-			<img class={styles.carouselHero} src={tabiusHero} />
-			<div class={styles.carouselDetails}>
-				<p>{dummyAppData[selectedAppId()].title}</p>
-				<p>{dummyAppData[selectedAppId()].description}</p>
+			class={styles.stripCard}
+			style={{ "background-color": selectedID() === id ? "grey" : "white" }}>
+			<img src={tabiusLogo} />
+			<div class={styles.stripDetails}>
+				<p>{title}</p>
+				<p style={{ opacity: 0.6, "font-size": "12px" }}>{tag}</p>
 			</div>
 		</div>
 	);
