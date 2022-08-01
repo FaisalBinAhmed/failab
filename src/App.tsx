@@ -1,6 +1,8 @@
 import type { Component } from "solid-js";
 import { Routes, Route } from "@solidjs/router";
 
+import styles from "./App.module.css";
+
 import HomeScreen from "./screens/HomeScreen";
 import Header from "./components/Header";
 import Apps from "./screens/Apps";
@@ -19,6 +21,7 @@ const App: Component = () => {
 				<Route path="/contact" component={Contact} />
 				<Route path="/about" component={About} />
 			</Routes>
+			<div class={styles.footerContainer}></div>
 		</>
 	);
 };

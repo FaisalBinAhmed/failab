@@ -72,19 +72,22 @@ const Carousel: Component = () => {
 	);
 };
 
-const StripCard: Component<{
+export const StripCard: Component<{
 	id: number;
 	logo?: string;
 	title: string;
 	tag: string;
-	selectedID: Accessor<number>;
-	setSelectedID: Setter<number>;
+	selectedID?: Accessor<number>;
+	setSelectedID?: Setter<number>;
 }> = ({ id, logo, title, tag, selectedID, setSelectedID }) => {
 	return (
 		<div
 			class={styles.stripCard}
-			onClick={() => setSelectedID(id)}
-			style={{ "background-color": selectedID() === id ? "#fae7e1" : "white" }}>
+			onClick={() => setSelectedID && setSelectedID(id)}
+			style={{
+				"background-color":
+					selectedID && selectedID() === id ? "#fae7e1" : "white",
+			}}>
 			<img src={tabiusLogo} />
 			<div class={styles.stripDetails}>
 				<p>{title}</p>

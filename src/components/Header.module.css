@@ -34,3 +34,11 @@
 .headerButtonActive {
 	color: blue;
 }
+
+.strip {
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	overflow: scroll;
+	padding-bottom: 10px;
+}

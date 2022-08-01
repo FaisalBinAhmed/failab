@@ -25,21 +25,25 @@ const AppDetails: Component = () => {
 	);
 
 	return (
-		<div class={styles.container}>
-			<div class={styles.appDetails}>
-				<img src={tabiusLogo} />
-				<div class={styles.carouselDetails}>
-					<h1>{appDetails?.title}</h1>
-					<p>{appDetails?.description}</p>
-					<div class={styles.storeLinks}>
-						<img src={appstore} />
-						<img src={playstore} />
+		<div>
+			<div class={styles.container}>
+				<div class={styles.appDetails}>
+					<img src={tabiusLogo} />
+					<div class={styles.carouselDetails}>
+						<h1>{appDetails?.title}</h1>
+						<p>{appDetails?.description}</p>
+						<div class={styles.storeLinks}>
+							<img src={appstore} />
+							<img src={playstore} />
+						</div>
 					</div>
 				</div>
+				<div class={styles.mainImage}>
+					<img src={tabiusHero} />
+				</div>
 			</div>
-			<div class={styles.mainImage}>
-				<img src={tabiusHero} />
-			</div>
+			<div class={styles.gallery}></div>
+			<div class={styles.features}></div>
 		</div>
 	);
 };

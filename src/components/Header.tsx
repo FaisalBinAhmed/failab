@@ -1,9 +1,17 @@
 import { NavLink } from "@solidjs/router";
-import type { Component } from "solid-js";
+import { Component, createSignal } from "solid-js";
+import { carouselData } from "../../data/carouselData";
+import { StripCard } from "./Carousel";
 
 import styles from "./Header.module.css";
 
 const Header: Component = () => {
+	const [applistOpen, setApplistOpen] = createSignal(false);
+
+	function toggleApplist() {
+		setApplistOpen(!applistOpen());
+	}
+
 	return (
 		<>
 			<div>
@@ -15,12 +23,12 @@ const Header: Component = () => {
 						href="/">
 						Home
 					</NavLink>
-					<NavLink
+					<p
 						class={styles.headerButton}
-						activeClass={styles.headerButtonActive}
-						href="/apps">
+						onClick={toggleApplist}
+						style={{ color: applistOpen() ? "red" : "inherit" }}>
 						Apps
-					</NavLink>
+					</p>
 					<NavLink
 						class={styles.headerButton}
 						activeClass={styles.headerButtonActive}
@@ -34,10 +42,21 @@ const Header: Component = () => {
 						About
 					</NavLink>
 				</nav>
-				{/* <HeaderButton name="About" />
-				<HeaderButton name="Contact" />
-				<HeaderButton name="Apps" />
-				<HeaderButton name="Home" /> */}
+				{applistOpen() && (
+					<div class={styles.strip}>
+						{carouselData.map((item) => {
+							return (
+								<StripCard
+									id={item.id}
+									// selectedID={()=>{})}
+									// setSelectedID={setSelectedAppId}
+									title={item.title}
+									tag={item.tag}
+								/>
+							);
+						})}
+					</div>
+				)}
 			</div>
 		</>
 	);

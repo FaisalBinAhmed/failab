@@ -43,6 +43,24 @@
 	margin-right: 10px;
 }
 
+.gallery,
+.features {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	min-height: 50vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.gallery {
+	background-color: blue;
+}
+
+.features {
+	background-color: #fffff1;
+}
+
 /* desktop breakpoint */
 @media screen and (min-width: 40em) {
 	.container {
