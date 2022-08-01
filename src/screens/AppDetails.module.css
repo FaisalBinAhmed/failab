@@ -1,0 +1,76 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+}
+
+.appDetails {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.mainImage > img {
+	max-width: 90vw;
+	padding-bottom: 10px;
+}
+
+.carouselDetails {
+	display: flex;
+	flex-direction: column;
+	width: 90vw;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.carouselDetails > h1 {
+	margin: 0px;
+}
+
+.carouselDetails > p {
+	margin: 0px;
+}
+
+.storeLinks {
+	display: flex;
+	flex-direction: row;
+	margin-top: 10px;
+}
+
+.storeLinks > img {
+	max-width: 30vw;
+	margin-right: 10px;
+}
+
+/* desktop breakpoint */
+@media screen and (min-width: 40em) {
+	.container {
+		flex-direction: row-reverse;
+		justify-content: center;
+	}
+	.mainImage > img {
+		max-width: 33vw;
+		padding-right: 2.5vw;
+	}
+
+	.appDetails > img {
+		align-self: flex-start;
+		padding-left: 2.5vw;
+	}
+
+	.carouselDetails {
+		width: 33vw;
+		padding-left: 2.5vw;
+	}
+	.carouselDetails > p {
+		margin-top: 10px;
+	}
+
+	.storeLinks {
+		margin-top: 5vh;
+	}
+	.storeLinks > img {
+		max-width: 15vw;
+	}
+}

@@ -15,6 +15,8 @@ export interface CarouselItem {
 	tag: string;
 }
 
+export const appNames: string[] = ["tabius", "trilby", "scaler", "keytrails"];
+
 export const carouselData: CarouselItem[] = [
 	{
 		id: 0,
