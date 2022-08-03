@@ -43,7 +43,7 @@ const AppDetails: Component = () => {
 	);
 
 	return (
-		<div>
+		<div style={{ overflow: "hidden" }}>
 			<div class={styles.container}>
 				<div class={styles.appDetails}>
 					<img src={tabiusLogo} />
