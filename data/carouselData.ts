@@ -3,6 +3,11 @@ export interface StoreItems {
 	link: string;
 }
 
+export interface Screenshot {
+	path: string;
+	description: string;
+}
+
 export interface CarouselItem {
 	id: number;
 	title: string;
@@ -13,6 +18,7 @@ export interface CarouselItem {
 	fontColor?: string;
 	storeLinks: StoreItems[] | StoreItems;
 	tag: string;
+	screenshots: Screenshot[];
 }
 
 export const appNames: string[] = ["tabius", "trilby", "scaler", "keytrails"];
@@ -37,6 +43,24 @@ export const carouselData: CarouselItem[] = [
 			},
 		],
 		tag: "Chrome",
+		screenshots: [
+			{
+				path: "",
+				description: "this is a screenshot description",
+			},
+			{
+				path: "",
+				description: "this is another screenshot description",
+			},
+			{
+				path: "",
+				description: "this is another screenshot description",
+			},
+			{
+				path: "",
+				description: "this is another screenshot description",
+			},
+		],
 	},
 	{
 		id: 1,
@@ -57,6 +81,16 @@ export const carouselData: CarouselItem[] = [
 			},
 		],
 		tag: "Android",
+		screenshots: [
+			{
+				path: "",
+				description: "this is a screenshot description",
+			},
+			{
+				path: "",
+				description: "this is another screenshot description",
+			},
+		],
 	},
 	{
 		id: 2,
@@ -72,6 +106,16 @@ export const carouselData: CarouselItem[] = [
 			},
 		],
 		tag: "Mac",
+		screenshots: [
+			{
+				path: "",
+				description: "this is a screenshot description",
+			},
+			{
+				path: "",
+				description: "this is another screenshot description",
+			},
+		],
 	},
 	{
 		id: 3,
@@ -88,5 +132,15 @@ export const carouselData: CarouselItem[] = [
 			},
 		],
 		tag: "Mac",
+		screenshots: [
+			{
+				path: "",
+				description: "this is a screenshot description",
+			},
+			{
+				path: "",
+				description: "this is another screenshot description",
+			},
+		],
 	},
 ];

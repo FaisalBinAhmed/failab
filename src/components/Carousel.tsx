@@ -77,8 +77,8 @@ export const StripCard: Component<{
 	logo?: string;
 	title: string;
 	tag: string;
-	selectedID?: Accessor<number>;
-	setSelectedID?: Setter<number>;
+	selectedID: Accessor<number>;
+	setSelectedID: Setter<number>;
 }> = ({ id, logo, title, tag, selectedID, setSelectedID }) => {
 	return (
 		<div

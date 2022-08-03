@@ -4,6 +4,7 @@ import { carouselData } from "../../data/carouselData";
 import { StripCard } from "./Carousel";
 
 import styles from "./Header.module.css";
+import tabiusLogo from "../assets/tabius/tabius-logo.jpeg";
 
 const Header: Component = () => {
 	const [applistOpen, setApplistOpen] = createSignal(false);
@@ -46,13 +47,7 @@ const Header: Component = () => {
 					<div class={styles.strip}>
 						{carouselData.map((item) => {
 							return (
-								<StripCard
-									id={item.id}
-									// selectedID={()=>{})}
-									// setSelectedID={setSelectedAppId}
-									title={item.title}
-									tag={item.tag}
-								/>
+								<HeaderAppCard id={item.id} title={item.title} tag={item.tag} />
 							);
 						})}
 					</div>
@@ -73,6 +68,25 @@ export const HeaderButton: Component<HeaderButtonType> = ({ name }) => {
 	return (
 		<div onClick={onHeaderClick} class={styles.headerButton}>
 			{name}
+		</div>
+	);
+};
+
+export const HeaderAppCard: Component<{
+	id: number;
+	logo?: string;
+	title: string;
+	tag: string;
+}> = ({ id, logo, title, tag }) => {
+	return (
+		<div
+			class={styles.stripCard}
+			onClick={() => (window.location = `/app/${title.toLowerCase()}`)}>
+			<img src={tabiusLogo} />
+			<div class={styles.stripDetails}>
+				<p>{title}</p>
+				<p style={{ opacity: 0.6, "font-size": "12px" }}>{tag}</p>
+			</div>
 		</div>
 	);
 };

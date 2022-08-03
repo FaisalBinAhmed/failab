@@ -7,13 +7,6 @@
 	justify-content: center;
 }
 
-@media screen and (min-width: 40em) {
-	.header {
-		justify-content: flex-end;
-		padding-right: 50px;
-	}
-}
-
 .headerButton {
 	display: flex;
 	padding: 10px;
@@ -41,4 +34,47 @@
 	flex-direction: row;
 	overflow: scroll;
 	padding-bottom: 10px;
+}
+
+.stripCard {
+	display: flex;
+	flex-direction: row;
+	/* width: 40vw; */
+	/* background-color: beige; */
+	padding: 10px;
+	align-items: center;
+	cursor: pointer;
+}
+
+.stripCard > img {
+	width: 50px;
+	height: 50px;
+}
+
+.stripDetails {
+	display: flex;
+	flex-direction: column;
+	padding-left: 10px;
+}
+
+.stripDetails > p {
+	margin: unset;
+}
+
+.strip::-webkit-scrollbar {
+	display: none;
+}
+
+@media screen and (min-width: 40em) {
+	.header {
+		justify-content: flex-end;
+		padding-right: 50px;
+	}
+
+	.strip {
+		justify-content: flex-end;
+	}
+	.stripCard {
+		padding-left: 2vw;
+	}
 }
