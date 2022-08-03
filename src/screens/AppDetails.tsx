@@ -18,7 +18,6 @@ import ts1 from "../assets/trilby/ts1.png";
 
 import appstore from "../assets/appstore.png";
 import playstore from "../assets/playstore.png";
-import useWindowDimensions from "../hooks/useWindowDimensions";
 
 function isBadRoute(id: string) {
 	if (appNames.includes(id)) return false;
@@ -125,7 +124,7 @@ const Gallery: Component<{ appDetails: CarouselItem }> = ({ appDetails }) => {
 				{appDetails.screenshots.map((item, index) => {
 					return (
 						<div class={styles.galleryItem}>
-							<img class={styles.galleryCurrentPic} src={ts1} />
+							<img class={styles.galleryCurrentPic} src={tabiusHero} />
 							<div class={styles.galleryDetails}>
 								<p>{appDetails.screenshots[index].description}</p>
 							</div>
