@@ -124,7 +124,7 @@ const Gallery: Component<{ appDetails: CarouselItem }> = ({ appDetails }) => {
 				{appDetails.screenshots.map((item, index) => {
 					return (
 						<div class={styles.galleryItem}>
-							<img class={styles.galleryCurrentPic} src={tabiusHero} />
+							<img class={styles.galleryCurrentPic} src={ts1} />
 							<div class={styles.galleryDetails}>
 								<p>{appDetails.screenshots[index].description}</p>
 							</div>

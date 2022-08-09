@@ -4,6 +4,7 @@ import Carousel from "../components/Carousel";
 import SocialButton from "../components/SocialButton";
 
 import styles from "./HomeScreen.module.css";
+import Feedback from "../components/Feedback";
 
 const HomeScreen: Component = () => {
 	return (
@@ -25,7 +26,9 @@ const HomeScreen: Component = () => {
 				<Carousel />
 			</div>
 
-			<div class={styles.feedbackContainer}></div>
+			<div class={styles.feedbackContainer}>
+				<Feedback />
+			</div>
 		</div>
 	);
 };
