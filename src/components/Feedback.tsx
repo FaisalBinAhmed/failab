@@ -45,7 +45,7 @@ const FeedbackCard: Component<FeedbackProp> = ({ name, stars, review }) => {
 	return (
 		<div class={styles.cardContainer}>
 			<div class={styles.cardHeader}>
-				<div>{name}</div>
+				<div style={{ color: "grey" }}>{name}</div>
 				<div>{[...Array(stars)].map((item) => "★")}</div>
 			</div>
 			<div class={styles.cardFooter}>{review}</div>

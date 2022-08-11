@@ -9,6 +9,7 @@ import Apps from "./screens/Apps";
 import Contact from "./screens/Contact";
 import About from "./screens/About";
 import AppDetails from "./screens/AppDetails";
+import Footer from "./components/Footer";
 
 const App: Component = () => {
 	return (
@@ -21,7 +22,9 @@ const App: Component = () => {
 				<Route path="/contact" component={Contact} />
 				<Route path="/about" component={About} />
 			</Routes>
-			<div class={styles.footerContainer}></div>
+			<div class={styles.footerContainer}>
+				<Footer />
+			</div>
 		</>
 	);
 };
