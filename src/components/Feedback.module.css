@@ -1,5 +1,45 @@
 .container {
 	display: flex;
 	flex-grow: 1;
+	flex-direction: column;
+	padding: 5px;
+}
+
+.topContainer,
+.bottomContainer {
+	display: flex;
+	/* flex-grow: 1; */
+	flex-direction: column;
+}
+
+.cardContainer {
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	margin: 5px;
+	background-color: white;
+}
+
+.cardHeader {
+	display: flex;
+	justify-content: space-between;
 	flex-direction: row;
+}
+
+.cardFooter {
+	font-size: 16;
+	margin-top: 5px;
+}
+
+/* desktop breakpoint */
+@media screen and (min-width: 40em) {
+	.container {
+		max-width: 70vw;
+	}
+	.cardContainer {
+		max-width: 35vw;
+	}
+	.cardContainer:nth-child(even) {
+		align-self: flex-end;
+	}
 }
