@@ -1,11 +1,13 @@
 import {
 	Accessor,
 	Component,
-	createEffect,
 	createSignal,
+	For,
+	Match,
 	onCleanup,
 	onMount,
 	Setter,
+	Switch,
 } from "solid-js";
 
 import tabiusHero from "../assets/tabius/tabius-hero.png";
@@ -13,9 +15,47 @@ import tabiusLogo from "../assets/tabius/tabius-logo.jpeg";
 
 import appstore from "../assets/appstore.png";
 import playstore from "../assets/playstore.png";
+import chrome from "../assets/chrome.png";
+import microsoft from "../assets/microsoft.png";
 
-import { carouselData } from "../../data/carouselData";
+import { carouselData, StoreItems } from "../../data/carouselData";
 import styles from "./Carousel.module.css";
+
+const GetStoreButton: Component<StoreItems> = ({ storeType, link }) => {
+	return (
+		<Switch fallback={<div>Not Found</div>}>
+			<Match when={storeType === "chrome"}>
+				<img src={chrome} onClick={() => window.open(link, "_blank").focus()} />
+			</Match>
+			<Match when={storeType === "edge"}>
+				<img
+					src={microsoft}
+					onClick={() => window.open(link, "_blank").focus()}
+				/>
+			</Match>
+			<Match when={storeType === "macOS"}>
+				<img
+					src={appstore}
+					onClick={() => window.open(link, "_blank").focus()}
+				/>
+			</Match>
+			<Match when={storeType === "play"}>
+				<img
+					src={playstore}
+					onClick={() => window.open(link, "_blank").focus()}
+				/>
+			</Match>
+		</Switch>
+	);
+};
+
+// const getImageSource = (
+// 	url: string
+// ) => {
+
+// 	import image from url
+
+// };
 
 const Carousel: Component = () => {
 	const [selectedAppId, setSelectedAppId] = createSignal<number>(0);
@@ -43,30 +83,38 @@ const Carousel: Component = () => {
 			<div
 				class={styles.mainCarouselContainer}
 				style={{ "background-color": carouselData[selectedAppId()].color }}>
-				<img class={styles.carouselHero} src={tabiusHero} />
+				<img
+					class={styles.carouselHero}
+					src={carouselData[selectedAppId()].heroThumb}
+				/>
 				<div
 					class={styles.carouselDetails}
 					style={{ color: carouselData[selectedAppId()].fontColor ?? "white" }}>
 					<h1>{carouselData[selectedAppId()].title}</h1>
 					<p>{carouselData[selectedAppId()].description}</p>
 					<div class={styles.storeLinks}>
-						<img src={appstore} />
-						<img src={playstore} />
+						{/* <img src={appstore} />
+						<img src={playstore} /> */}
+						<For each={carouselData[selectedAppId()].storeLinks}>
+							{(item) => GetStoreButton(item)}
+						</For>
 					</div>
 				</div>
 			</div>
 			<div class={styles.strip}>
-				{carouselData.map((item) => {
-					return (
-						<StripCard
-							id={item.id}
-							selectedID={selectedAppId}
-							setSelectedID={setSelectedAppId}
-							title={item.title}
-							tag={item.tag}
-						/>
-					);
-				})}
+				<For each={carouselData}>
+					{(item) => {
+						return (
+							<StripCard
+								id={item.id}
+								selectedID={selectedAppId}
+								setSelectedID={setSelectedAppId}
+								title={item.title}
+								tag={item.tag}
+							/>
+						);
+					}}
+				</For>
 			</div>
 		</div>
 	);
