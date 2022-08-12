@@ -10,6 +10,10 @@
 	flex-direction: column;
 	align-items: center;
 }
+/* icon */
+.appDetails > img {
+	max-width: 20vh;
+}
 
 .mainImage > img {
 	max-width: 90vw;
@@ -123,17 +127,22 @@
 		justify-content: center;
 	}
 	.mainImage > img {
-		max-width: 33vw;
-		padding-right: 2.5vw;
+		max-width: calc(40vw);
+		padding-right: 2vw;
+		padding-left: 2vw;
 	}
+	/* .appDetails {
+		flex-direction: row;
+	} */
 
 	.appDetails > img {
 		align-self: flex-start;
 		padding-left: 2.5vw;
+		max-width: 10rem;
 	}
 
 	.carouselDetails {
-		width: 33vw;
+		max-width: 40vw;
 		padding-left: 2.5vw;
 	}
 	.carouselDetails > p {

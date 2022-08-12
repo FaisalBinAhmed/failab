@@ -21,7 +21,7 @@ import microsoft from "../assets/microsoft.png";
 import { carouselData, StoreItems } from "../../data/carouselData";
 import styles from "./Carousel.module.css";
 
-const GetStoreButton: Component<StoreItems> = ({ storeType, link }) => {
+export const GetStoreButton: Component<StoreItems> = ({ storeType, link }) => {
 	return (
 		<Switch fallback={<div>Not Found</div>}>
 			<Match when={storeType === "chrome"}>
@@ -93,8 +93,6 @@ const Carousel: Component = () => {
 					<h1>{carouselData[selectedAppId()].title}</h1>
 					<p>{carouselData[selectedAppId()].description}</p>
 					<div class={styles.storeLinks}>
-						{/* <img src={appstore} />
-						<img src={playstore} /> */}
 						<For each={carouselData[selectedAppId()].storeLinks}>
 							{(item) => GetStoreButton(item)}
 						</For>
@@ -111,6 +109,7 @@ const Carousel: Component = () => {
 								setSelectedID={setSelectedAppId}
 								title={item.title}
 								tag={item.tag}
+								logo={item.icon}
 							/>
 						);
 					}}
@@ -122,7 +121,7 @@ const Carousel: Component = () => {
 
 export const StripCard: Component<{
 	id: number;
-	logo?: string;
+	logo: string;
 	title: string;
 	tag: string;
 	selectedID: Accessor<number>;
@@ -136,7 +135,7 @@ export const StripCard: Component<{
 				"background-color":
 					selectedID && selectedID() === id ? "#fae7e1" : "white",
 			}}>
-			<img src={tabiusLogo} />
+			<img src={logo} />
 			<div class={styles.stripDetails}>
 				<p>{title}</p>
 				<p style={{ opacity: 0.6, "font-size": "12px" }}>{tag}</p>

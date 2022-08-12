@@ -28,7 +28,7 @@ export const carouselData: CarouselItem[] = [
 		id: 0,
 		title: "Tabius",
 		heroThumb: "/assets/tabius/tabius-hero.png",
-		icon: "assets/tabius/tabius-logo.jpeg",
+		icon: "/assets/tabius/tabius-logo.jpeg",
 		description: "Tab Grouping Assistant for Chrome and Microsoft Edge",
 		color: "#B6D1E4",
 		fontColor: "black",
@@ -45,28 +45,28 @@ export const carouselData: CarouselItem[] = [
 		tag: "Chrome",
 		screenshots: [
 			{
-				path: "",
+				path: "/assets/tabius/tb2.png",
 				description: "this is a screenshot description",
 			},
 			{
-				path: "",
-				description: "this is another screenshot description",
+				path: "/assets/tabius/tb3.png",
+				description: "this is a screenshot description",
 			},
 			{
-				path: "",
-				description: "this is another screenshot description",
+				path: "/assets/tabius/tb4.png",
+				description: "this is a screenshot description",
 			},
 			{
-				path: "",
-				description: "this is another screenshot description",
+				path: "/assets/tabius/tb5.png",
+				description: "this is a screenshot description",
 			},
 		],
 	},
 	{
 		id: 1,
 		title: "Trilby",
-		heroThumb: "assets/trilby/trilby.png",
-		icon: "assets/tabius-small.jpeg",
+		heroThumb: "/assets/trilby/trilby.png",
+		icon: "/assets/trilby/trilby-logo.webp",
 		description: "Best Hacker News App for Android - completely free!",
 		color: "#FFF3E9",
 		fontColor: "black",
@@ -79,11 +79,19 @@ export const carouselData: CarouselItem[] = [
 		tag: "Android",
 		screenshots: [
 			{
-				path: "",
+				path: "/assets/trilby/ts1.png",
 				description: "this is a screenshot description",
 			},
 			{
-				path: "",
+				path: "/assets/trilby/ts2.webp",
+				description: "this is another screenshot description",
+			},
+			{
+				path: "/assets/trilby/ts3.webp",
+				description: "this is another screenshot description",
+			},
+			{
+				path: "/assets/trilby/ts4.webp",
 				description: "this is another screenshot description",
 			},
 		],
@@ -91,8 +99,8 @@ export const carouselData: CarouselItem[] = [
 	{
 		id: 2,
 		title: "Scaler",
-		heroThumb: "assets/scaler/scaler.jpeg",
-		icon: "assets/tabius-small.jpeg",
+		heroThumb: "/assets/scaler/scaler.jpeg",
+		icon: "/assets/scaler/scaler-logo.webp",
 		description: "Realtime bandwidth monitor application for macOS devices.",
 		color: "#208DCF",
 		storeLinks: [
@@ -104,11 +112,11 @@ export const carouselData: CarouselItem[] = [
 		tag: "Mac",
 		screenshots: [
 			{
-				path: "",
+				path: "/assets/scaler/sc1.jpeg",
 				description: "this is a screenshot description",
 			},
 			{
-				path: "",
+				path: "/assets/scaler/sc2.jpeg",
 				description: "this is another screenshot description",
 			},
 		],
@@ -116,8 +124,8 @@ export const carouselData: CarouselItem[] = [
 	{
 		id: 3,
 		title: "KeyTrails",
-		heroThumb: "assets/keytrails/kt5.png",
-		icon: "assets/tabius-small.jpeg",
+		heroThumb: "/assets/keytrails/kt5.png",
+		icon: "/assets/keytrails/keytrails-logo.webp",
 		description:
 			"Present your keystrokes on screen with style - for macOS devices",
 		color: "#2F4DB2",
@@ -130,12 +138,24 @@ export const carouselData: CarouselItem[] = [
 		tag: "Mac",
 		screenshots: [
 			{
-				path: "",
+				path: "/assets/keytrails/kt1.png",
 				description: "this is a screenshot description",
 			},
 			{
-				path: "",
-				description: "this is another screenshot description",
+				path: "/assets/keytrails/kt2.png",
+				description: "this is a screenshot description",
+			},
+			{
+				path: "/assets/keytrails/kt3.png",
+				description: "this is a screenshot description",
+			},
+			{
+				path: "/assets/keytrails/kt4.png",
+				description: "this is a screenshot description",
+			},
+			{
+				path: "/assets/keytrails/kt6.png",
+				description: "this is a screenshot description",
 			},
 		],
 	},

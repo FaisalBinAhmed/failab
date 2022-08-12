@@ -47,7 +47,12 @@ const Header: Component = () => {
 					<div class={styles.strip}>
 						{carouselData.map((item) => {
 							return (
-								<HeaderAppCard id={item.id} title={item.title} tag={item.tag} />
+								<HeaderAppCard
+									id={item.id}
+									title={item.title}
+									tag={item.tag}
+									logo={item.icon}
+								/>
 							);
 						})}
 					</div>
@@ -74,7 +79,7 @@ export const HeaderButton: Component<HeaderButtonType> = ({ name }) => {
 
 export const HeaderAppCard: Component<{
 	id: number;
-	logo?: string;
+	logo: string;
 	title: string;
 	tag: string;
 }> = ({ id, logo, title, tag }) => {
@@ -82,7 +87,7 @@ export const HeaderAppCard: Component<{
 		<div
 			class={styles.stripCard}
 			onClick={() => (window.location = `/app/${title.toLowerCase()}`)}>
-			<img src={tabiusLogo} />
+			<img src={logo} />
 			<div class={styles.stripDetails}>
 				<p>{title}</p>
 				<p style={{ opacity: 0.6, "font-size": "12px" }}>{tag}</p>

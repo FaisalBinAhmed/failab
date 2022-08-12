@@ -4,6 +4,7 @@ import {
 	createEffect,
 	createRenderEffect,
 	createSignal,
+	For,
 	onCleanup,
 	onMount,
 } from "solid-js";
@@ -18,6 +19,7 @@ import ts1 from "../assets/trilby/ts1.png";
 
 import appstore from "../assets/appstore.png";
 import playstore from "../assets/playstore.png";
+import { GetStoreButton } from "../components/Carousel";
 
 function isBadRoute(id: string) {
 	if (appNames.includes(id)) return false;
@@ -45,18 +47,19 @@ const AppDetails: Component = () => {
 		<div style={{ overflow: "hidden" }}>
 			<div class={styles.container}>
 				<div class={styles.appDetails}>
-					<img src={tabiusLogo} />
+					<img src={appDetails?.icon} />
 					<div class={styles.carouselDetails}>
 						<h1>{appDetails?.title}</h1>
 						<p>{appDetails?.description}</p>
 						<div class={styles.storeLinks}>
-							<img src={appstore} />
-							<img src={playstore} />
+							<For each={appDetails?.storeLinks}>
+								{(item) => GetStoreButton(item)}
+							</For>
 						</div>
 					</div>
 				</div>
 				<div class={styles.mainImage}>
-					<img src={tabiusHero} />
+					<img src={appDetails?.heroThumb} />
 				</div>
 			</div>
 			<div class={styles.gallery}>
@@ -121,16 +124,16 @@ const Gallery: Component<{ appDetails: CarouselItem }> = ({ appDetails }) => {
 				})}
 			</div> */}
 			<div class={styles.galleryContainer}>
-				{appDetails.screenshots.map((item, index) => {
-					return (
+				<For each={appDetails.screenshots}>
+					{(item, index) => (
 						<div class={styles.galleryItem}>
-							<img class={styles.galleryCurrentPic} src={ts1} />
+							<img class={styles.galleryCurrentPic} src={item.path} />
 							<div class={styles.galleryDetails}>
-								<p>{appDetails.screenshots[index].description}</p>
+								<p>{item.description}</p>
 							</div>
 						</div>
-					);
-				})}
+					)}
+				</For>
 			</div>
 		</div>
 	);
