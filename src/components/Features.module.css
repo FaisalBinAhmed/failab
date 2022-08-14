@@ -11,6 +11,15 @@
 	padding: 5px;
 	flex-grow: 1;
 }
+.cardTitle {
+	display: flex;
+	flex-direction: row;
+}
+.cardTitle > p {
+	font-size: 25px;
+	margin: 0;
+	font-weight: bold;
+}
 
 /* desktop breakpoint */
 @media screen and (min-width: 40em) {

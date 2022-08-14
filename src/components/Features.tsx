@@ -35,9 +35,10 @@ const FeatureCard: Component<FeatureType & Feature> = ({
 }) => {
 	return (
 		<div class={styles.featureCard}>
-			<h1 style={{ color: color }}>
-				{index}. {title}
-			</h1>
+			<div class={styles.cardTitle}>
+				<p style={{ color: color }}>{index}. &nbsp;</p>
+				<p> {title}</p>
+			</div>
 			<p>{description}</p>
 		</div>
 	);
