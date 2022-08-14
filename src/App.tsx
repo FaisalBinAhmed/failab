@@ -10,6 +10,7 @@ import Contact from "./screens/Contact";
 import About from "./screens/About";
 import AppDetails from "./screens/AppDetails";
 import Footer from "./components/Footer";
+import Privacy from "./screens/Privacy";
 
 const App: Component = () => {
 	return (
@@ -19,6 +20,7 @@ const App: Component = () => {
 				<Route path="/" component={HomeScreen} />
 				<Route path="/apps" component={Apps} />
 				<Route path="/app/:id" component={AppDetails} />
+				<Route path="/app/:id/privacypolicy" component={Privacy} />
 				<Route path="/contact" component={Contact} />
 				<Route path="/about" component={About} />
 			</Routes>

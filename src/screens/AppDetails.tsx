@@ -20,8 +20,9 @@ import ts1 from "../assets/trilby/ts1.png";
 import appstore from "../assets/appstore.png";
 import playstore from "../assets/playstore.png";
 import { GetStoreButton } from "../components/Carousel";
+import Features from "../components/Features";
 
-function isBadRoute(id: string) {
+export function isBadRoute(id: string) {
 	if (appNames.includes(id)) return false;
 	return true;
 }
@@ -37,6 +38,7 @@ function getWindowDimensions() {
 const AppDetails: Component = () => {
 	const params = useParams();
 
+	//TODO redirect to 404 page
 	if (isBadRoute(params.id)) return <div>404 Bad Route</div>;
 
 	const appDetails = carouselData.find(
@@ -65,7 +67,11 @@ const AppDetails: Component = () => {
 			<div class={styles.gallery}>
 				<Gallery appDetails={appDetails} />
 			</div>
-			<div class={styles.features}></div>
+			{appDetails?.featurelist && (
+				<div class={styles.features}>
+					<Features features={appDetails.featurelist} />
+				</div>
+			)}
 		</div>
 	);
 };

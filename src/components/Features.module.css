@@ -1,0 +1,25 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	padding: 5vw;
+	justify-content: center;
+}
+
+.featureCard {
+	margin: 5px;
+	padding: 5px;
+	flex-grow: 1;
+}
+
+/* desktop breakpoint */
+@media screen and (min-width: 40em) {
+	.container {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.featureCard {
+		max-width: 25vw;
+		min-width: 21vw;
+	}
+}

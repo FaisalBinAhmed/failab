@@ -7,7 +7,14 @@ export interface Screenshot {
 	path: string;
 	description: string;
 }
-
+interface PrivacyData {
+	lastDate: string;
+	data: string;
+}
+export interface Feature {
+	title: string;
+	description: string;
+}
 export interface CarouselItem {
 	id: number;
 	title: string;
@@ -19,6 +26,8 @@ export interface CarouselItem {
 	storeLinks: StoreItems[];
 	tag: string;
 	screenshots: Screenshot[];
+	featurelist?: Feature[];
+	privacyInfo?: PrivacyData;
 }
 
 export const appNames: string[] = ["tabius", "trilby", "scaler", "keytrails"];
@@ -120,6 +129,37 @@ export const carouselData: CarouselItem[] = [
 				description: "this is another screenshot description",
 			},
 		],
+		featurelist: [
+			{
+				title: "Speed Meter",
+				description:
+					"Realtime monitoring of your system's download and upload speed from Menubar.",
+			},
+			{
+				title: "Chart View",
+				description: "Chart overview of the recent network speeds.",
+			},
+			{
+				title: "Native",
+				description:
+					"Universal App support. (works with Native M1 macOS devices)",
+			},
+			{
+				title: "Customizations",
+				description:
+					"tweak how the Menubar data looks by modifying visible speed type, its unit, number of lines, and color.",
+			},
+			{
+				title: "Control",
+				description: "Pause or Resume the app anytime.",
+			},
+		],
+		privacyInfo: {
+			lastDate: "14 Feb 2022",
+			data: `Scaler does not collect any user information. User preference for the app is stored within the device itself and does not leave the device.
+
+Please note: Scaler does not need and should not ask for any permissions.`,
+		},
 	},
 	{
 		id: 3,
@@ -158,5 +198,42 @@ export const carouselData: CarouselItem[] = [
 				description: "this is a screenshot description",
 			},
 		],
+		featurelist: [
+			{
+				title: "Visualize",
+				description: "Visualize your keypresses in style.",
+			},
+			{
+				title: "Customize",
+				description: "Personalize the look of the keys.",
+			},
+			{
+				title: "Native",
+				description:
+					"Universal App support. (works with Native M1 macOS devices)",
+			},
+			{
+				title: "Similarity",
+				description: "Keys look and feel just like your physical device.",
+			},
+			{
+				title: "Control",
+				description: "Limit number of keys and their lifetime on screen.",
+			},
+			{
+				title: "Clicks",
+				description: "Optionally visualize mouse clicks as well.",
+			},
+			{
+				title: "Placement",
+				description: "Position it anywhere on screen, on any screen.",
+			},
+		],
+		privacyInfo: {
+			lastDate: "July 5 2022",
+			data: `KeyTrails does not collect any user information. User preference for the app is stored within the device itself and does not leave the device.
+
+Please note: KeyTrails needs Input Monitoring permission to get your keyboard and mouse inputs from the system. Without this permission, KeyTrails can’t perform. KeyTrails never uses this data for any purposes. This data is never recorded nor it ever leaves your device. You can even block KeyTrails’ internet access for added peace of mind. Sensitive information such as passwords will never be shown by the app. In fact, macOS blocks any app to intervene such data.`,
+		},
 	},
 ];
