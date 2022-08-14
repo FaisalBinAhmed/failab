@@ -154,6 +154,7 @@
 	}
 	.storeLinks > img {
 		max-width: 15vw;
+		cursor: pointer;
 	}
 
 	/* gallery related */

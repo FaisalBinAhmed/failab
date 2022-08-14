@@ -1,10 +1,11 @@
 import { Component } from "solid-js";
+import { Link } from "@solidjs/router";
 
 import styles from "./Footer.module.css";
 
 import twitter from "../assets/twitter.svg";
 import paypal from "../assets/paypal.svg";
-import { Link } from "@solidjs/router";
+import munich from "../assets/munich.png";
 
 const Footer: Component<{}> = (props) => {
 	const date = new Date().getFullYear();
@@ -27,8 +28,11 @@ const Footer: Component<{}> = (props) => {
 				</Link>
 			</div>
 			<div class={styles.foot}>
-				<p>FAILAB {date}</p>
-				<p>MUNICH, DE</p>
+				<div class={styles.copyright}>
+					<p>FAILAB {date}</p>
+					<p>MUNICH, DE</p>
+				</div>
+				<img src={munich} />
 			</div>
 		</div>
 	);
