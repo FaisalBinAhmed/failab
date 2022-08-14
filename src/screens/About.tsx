@@ -18,9 +18,9 @@ const About: Component = () => {
 				collect any data or show ads.
 			</p>
 			<p>
-				The apps I made were created out of my own necessities. As I work full
-				time and have a big wish list for new apps, I do not have enough time to
-				revisit individual apps quite often. That is why I make sure the first
+				The apps were created out of my own necessities. As I work full time and
+				have a big wish list for new apps, I do not have enough time to revisit
+				individual apps quite often. That is why I make sure the first
 				release(s) have the most features and the least bugs. Nonetheless, I
 				keep my apps up-to-date. The changelogs are the testament to that.
 			</p>
@@ -28,7 +28,20 @@ const About: Component = () => {
 				I love hearing your feedback. As I do not get much revenue from the
 				apps, your feedback and kind words are the fuel that keeps me going. If
 				you have anything to share, feel free to{" "}
-				<a href="/contact">contact me.</a>
+				<a href="/contact">contact me.</a> As always, reviews/ratings on the app
+				stores are highly appreciated.
+			</p>
+			<p>
+				In case you feel extra generous, you can send me some coffee or beer
+				money at my{" "}
+				<a href="https://paypal.me/FaisalDE" target="_blank">
+					Paypal
+				</a>{" "}
+				or{" "}
+				<a href="https://www.buymeacoffee.com/faisalbin" target="_blank">
+					Buy Me a Coffee
+				</a>{" "}
+				thing. :){" "}
 			</p>
 			<p>
 				If you want to keep updated and learn about new apps being released, you
