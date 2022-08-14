@@ -1,5 +1,6 @@
 import { Component, For } from "solid-js";
 import { CarouselItem, Feature } from "../../data/carouselData";
+import { headerColors } from "../../data/colors";
 
 import styles from "./Features.module.css";
 
@@ -12,7 +13,7 @@ const Features: Component<{ features: Feature[] }> = ({ features }) => {
 						index={index() + 1}
 						title={item.title}
 						description={item.description}
-						color="blue"
+						color={headerColors[index() + 1]}
 					/>
 				)}
 			</For>

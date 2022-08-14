@@ -36,7 +36,7 @@ export const carouselData: CarouselItem[] = [
 	{
 		id: 0,
 		title: "Tabius",
-		heroThumb: "/assets/tabius/tabius-hero.png",
+		heroThumb: "/assets/tabius/tabius.jpeg",
 		icon: "/assets/tabius/tabius-logo.jpeg",
 		description: "Tab Grouping Assistant for Chrome and Microsoft Edge",
 		color: "#B6D1E4",
@@ -102,6 +102,55 @@ export const carouselData: CarouselItem[] = [
 			{
 				path: "/assets/trilby/ts4.webp",
 				description: "this is another screenshot description",
+			},
+		],
+		featurelist: [
+			{
+				title: "See What's Happening in Hacker News",
+				description: "Read the top and latest posts from HN, and many more.",
+			},
+			{
+				title: "Dark Mode",
+				description:
+					"Dark mode for your night time viewing. Can automatically sync with your system.",
+			},
+			{
+				title: "Beautifully Crafted Skins",
+				description:
+					"Six meticulously picked color skins. Pick whichever you like and sync with Light/Dark Mode.",
+			},
+			{
+				title: "Powerful Search Features",
+				description:
+					"Search HN posts powered by Algolia - just like the HN web. Sort by date, and filter by post type.",
+			},
+			{
+				title: "Highly Customizable",
+				description: "Make the app look like the way you want.",
+			},
+			{
+				title: "Read History",
+				description: "Keep track of your last read articles.",
+			},
+			{
+				title: "Profile View",
+				description:
+					"View yours and others' profile and their latest activities.",
+			},
+			{
+				title: "Read Comments in Great Details",
+				description:
+					"Trilby was created with reading comments in mind. If you're like me who uses HN mainly to read comments, Trilby is the app for you.",
+			},
+			{
+				title: "Login Functions",
+				description:
+					"Use features like commenting, upvoting, and posting new stories that require you to login right from the app.",
+			},
+			{
+				title: "Native Links Support",
+				description:
+					"Open and read native HN links within the app itself. Look out for that Orange link.",
 			},
 		],
 	},

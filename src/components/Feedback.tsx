@@ -5,6 +5,7 @@ import styles from "./Feedback.module.css";
 const Feedback: Component = () => {
 	return (
 		<div class={styles.container}>
+			<h2>What people are saying ☺</h2>
 			<div class={styles.topContainer}>
 				<FeedbackCard
 					name="Benjamin -> Tabius"

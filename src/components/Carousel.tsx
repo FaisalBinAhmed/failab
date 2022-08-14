@@ -49,14 +49,6 @@ export const GetStoreButton: Component<StoreItems> = ({ storeType, link }) => {
 	);
 };
 
-// const getImageSource = (
-// 	url: string
-// ) => {
-
-// 	import image from url
-
-// };
-
 const Carousel: Component = () => {
 	const [selectedAppId, setSelectedAppId] = createSignal<number>(0);
 
@@ -64,7 +56,6 @@ const Carousel: Component = () => {
 
 	const interval = () => {
 		intervalID = setInterval(() => {
-			// console.log("currentID: ", selectedAppId());
 			if (selectedAppId() === carouselData.length - 1) {
 				setSelectedAppId(0);
 			} else {
@@ -91,7 +82,18 @@ const Carousel: Component = () => {
 					class={styles.carouselDetails}
 					style={{ color: carouselData[selectedAppId()].fontColor ?? "white" }}>
 					<h1>{carouselData[selectedAppId()].title}</h1>
-					<p>{carouselData[selectedAppId()].description}</p>
+					<p>
+						{carouselData[selectedAppId()].description} <br />
+						<a
+							style={{
+								color: carouselData[selectedAppId()].fontColor ?? "white",
+							}}
+							href={`/app/${carouselData[
+								selectedAppId()
+							].title.toLowerCase()}`}>
+							Learn more -&gt;{" "}
+						</a>{" "}
+					</p>
 					<div class={styles.storeLinks}>
 						<For each={carouselData[selectedAppId()].storeLinks}>
 							{(item) => GetStoreButton(item)}
@@ -133,7 +135,7 @@ export const StripCard: Component<{
 			onClick={() => setSelectedID && setSelectedID(id)}
 			style={{
 				"background-color":
-					selectedID && selectedID() === id ? "#fae7e1" : "white",
+					selectedID && selectedID() === id ? "#BBDEFB" : "white",
 			}}>
 			<img src={logo} />
 			<div class={styles.stripDetails}>

@@ -19,6 +19,11 @@ const Contact: Component = () => {
 				(Author)
 			</p>
 			<p>
+				<a href="https://linkedin.com/in/faisalbin" target="_blank">
+					LinkedIn
+				</a>
+			</p>
+			<p>
 				<a href="https://faisalbin.com" target="_blank">
 					Personal Portfolio
 				</a>

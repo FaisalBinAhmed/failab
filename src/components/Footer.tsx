@@ -13,8 +13,20 @@ const Footer: Component<{}> = (props) => {
 	return (
 		<div class={styles.container}>
 			<div class={styles.logoContainer}>
-				<img class={styles.socialLogo} src={twitter} />
-				<img class={styles.socialLogo} src={paypal} />
+				<img
+					onClick={() =>
+						window.open("https://twitter.com/failab_eu", "_blank").focus()
+					}
+					class={styles.socialLogo}
+					src={twitter}
+				/>
+				<img
+					onClick={() =>
+						window.open("https://paypal.me/FaisalDE", "_blank").focus()
+					}
+					class={styles.socialLogo}
+					src={paypal}
+				/>
 			</div>
 			<div class={styles.links}>
 				<Link class={styles.link} href="/about">
@@ -23,14 +35,14 @@ const Footer: Component<{}> = (props) => {
 				<Link class={styles.link} href="/contact">
 					Contact
 				</Link>
-				<Link class={styles.link} href="/contact">
+				{/* <Link class={styles.link} href="/contact">
 					Imprint
-				</Link>
+				</Link> */}
 			</div>
 			<div class={styles.foot}>
 				<div class={styles.copyright}>
-					<p>FAILAB {date}</p>
-					<p>MUNICH, DE</p>
+					<p>© FAILAB {date}</p>
+					<p>Made with ♥ in Munich</p>
 				</div>
 				<img src={munich} />
 			</div>

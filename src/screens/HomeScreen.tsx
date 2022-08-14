@@ -17,8 +17,12 @@ const HomeScreen: Component = () => {
 						Hobby projects + commercial app quality = Failab Apps
 					</p>
 					<div class={styles.socialContainer}>
-						<SocialButton title="Follow Us" color="blue" />
-						<SocialButton title="Contact" color="green" />
+						<SocialButton
+							title="Follow Us"
+							color="blue"
+							toExternal="https://twitter.com/failab_eu"
+						/>
+						<SocialButton title="Contact" color="green" toInternal="contact" />
 					</div>
 				</div>
 			</div>

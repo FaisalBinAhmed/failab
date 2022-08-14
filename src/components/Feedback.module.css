@@ -5,6 +5,11 @@
 	padding: 5px;
 }
 
+.container > h2 {
+	margin: 0 auto;
+	padding: 5px;
+}
+
 .topContainer,
 .bottomContainer {
 	display: flex;
