@@ -1,5 +1,6 @@
 import { useParams } from "@solidjs/router";
 import {
+	Accessor,
 	Component,
 	createEffect,
 	createRenderEffect,
@@ -12,13 +13,6 @@ import { appNames, carouselData, CarouselItem } from "../../data/carouselData";
 
 import styles from "./AppDetails.module.css";
 
-import tabiusLogo from "../assets/tabius/tabius-logo.jpeg";
-import tabiusHero from "../assets/tabius/tabius-hero.png";
-
-import ts1 from "../assets/trilby/ts1.png";
-
-import appstore from "../assets/appstore.png";
-import playstore from "../assets/playstore.png";
 import { GetStoreButton } from "../components/Carousel";
 import Features from "../components/Features";
 
@@ -27,49 +21,48 @@ export function isBadRoute(id: string) {
 	return true;
 }
 
-function getWindowDimensions() {
-	const { innerWidth: width, innerHeight: height } = window;
-	return {
-		width,
-		height,
-	};
-}
-
 const AppDetails: Component = () => {
+	const [appDetails, setAppDetails] = createSignal<CarouselItem>();
+
 	const params = useParams();
 
 	//TODO redirect to 404 page
 	if (isBadRoute(params.id)) return <div>404 Bad Route</div>;
+	createEffect(() => {
+		// console.log("current param: ", params.id);
 
-	const appDetails = carouselData.find(
-		(item) => item.title.toLowerCase() === params.id
-	);
+		const appData = carouselData.find(
+			(item) => item.title.toLowerCase() === params.id
+		);
+
+		setAppDetails(appData);
+	});
 
 	return (
 		<div style={{ overflow: "hidden" }}>
 			<div class={styles.container}>
 				<div class={styles.appDetails}>
-					<img src={appDetails?.icon} />
+					<img src={appDetails()?.icon} />
 					<div class={styles.carouselDetails}>
-						<h1>{appDetails?.title}</h1>
-						<p>{appDetails?.description}</p>
+						<h1>{appDetails()?.title}</h1>
+						<p>{appDetails()?.description}</p>
 						<div class={styles.storeLinks}>
-							<For each={appDetails?.storeLinks}>
+							<For each={appDetails()?.storeLinks}>
 								{(item) => GetStoreButton(item)}
 							</For>
 						</div>
 					</div>
 				</div>
 				<div class={styles.mainImage}>
-					<img src={appDetails?.heroThumb} />
+					<img src={appDetails()?.heroThumb} />
 				</div>
 			</div>
 			<div class={styles.gallery}>
 				<Gallery appDetails={appDetails} />
 			</div>
-			{appDetails?.featurelist && (
+			{appDetails()?.featurelist && (
 				<div class={styles.features}>
-					<Features features={appDetails.featurelist} />
+					<Features appDetails={appDetails} />
 				</div>
 			)}
 		</div>
@@ -78,68 +71,24 @@ const AppDetails: Component = () => {
 
 export default AppDetails;
 
-const Gallery: Component<{ appDetails: CarouselItem }> = ({ appDetails }) => {
-	const [selectedImageNumber, setSelectedImageNumber] = createSignal<number>(0);
-
-	// const [windowDimensions, setWindowDimensions] = createSignal(
-	// 	getWindowDimensions()
-	// );
-
-	// createRenderEffect(() => {
-	// 	function handleResize() {
-	// 		setWindowDimensions(getWindowDimensions());
-	// 	}
-
-	// 	window.addEventListener("resize", handleResize);
-	// 	onCleanup(() => window.removeEventListener("resize", handleResize));
-	// });
-
-	let intervalID: number;
-
-	const interval = () => {
-		intervalID = setInterval(() => {
-			// console.log("currentID: ", selectedAppId());
-			if (selectedImageNumber() === appDetails.screenshots.length - 1) {
-				setSelectedImageNumber(0);
-			} else {
-				setSelectedImageNumber(selectedImageNumber() + 1);
-			}
-		}, 5000);
-	}; //changes the gallery every 5 sec
-
-	onMount(() => {
-		interval();
-		onCleanup(() => clearInterval(intervalID)); //clears the timer on unmount
-	});
-
+const Gallery: Component<{ appDetails: Accessor<CarouselItem> }> = ({
+	appDetails,
+}) => {
 	return (
 		<div class={styles.gallery}>
-			{/* <div class={styles.imageButtonContainer}>
-				{appDetails.screenshots.map((item, index) => {
-					return (
-						<div
-							style={{
-								"background-color":
-									index === selectedImageNumber() ? "white" : "inherit",
-							}}
-							onClick={() => setSelectedImageNumber(index)}
-							class={styles.imageButton}>
-							{index + 1}
-						</div>
-					);
-				})}
-			</div> */}
 			<div class={styles.galleryContainer}>
-				<For each={appDetails.screenshots}>
-					{(item, index) => (
-						<div class={styles.galleryItem}>
-							<img class={styles.galleryCurrentPic} src={item.path} />
-							<div class={styles.galleryDetails}>
-								<p>{item.description}</p>
+				{appDetails()?.screenshots && (
+					<For each={appDetails().screenshots}>
+						{(item, index) => (
+							<div class={styles.galleryItem}>
+								<img class={styles.galleryCurrentPic} src={item.path} />
+								<div class={styles.galleryDetails}>
+									<p>{item.description}</p>
+								</div>
 							</div>
-						</div>
-					)}
-				</For>
+						)}
+					</For>
+				)}
 			</div>
 		</div>
 	);

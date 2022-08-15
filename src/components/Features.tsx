@@ -1,13 +1,15 @@
-import { Component, For } from "solid-js";
+import { Accessor, Component, For } from "solid-js";
 import { CarouselItem, Feature } from "../../data/carouselData";
 import { headerColors } from "../../data/colors";
 
 import styles from "./Features.module.css";
 
-const Features: Component<{ features: Feature[] }> = ({ features }) => {
+const Features: Component<{ appDetails: Accessor<CarouselItem> }> = ({
+	appDetails,
+}) => {
 	return (
 		<div class={styles.container}>
-			<For each={features}>
+			<For each={appDetails().featurelist}>
 				{(item, index) => (
 					<FeatureCard
 						index={index() + 1}

@@ -1,4 +1,4 @@
-import { NavLink } from "@solidjs/router";
+import { NavLink, useNavigate } from "@solidjs/router";
 import { Component, createSignal } from "solid-js";
 import { carouselData } from "../../data/carouselData";
 import { StripCard } from "./Carousel";
@@ -83,10 +83,14 @@ export const HeaderAppCard: Component<{
 	title: string;
 	tag: string;
 }> = ({ id, logo, title, tag }) => {
+	const navigate = useNavigate();
+
 	return (
 		<div
 			class={styles.stripCard}
-			onClick={() => (window.location = `/app/${title.toLowerCase()}`)}>
+			onClick={() =>
+				navigate(`/app/${title.toLowerCase()}`, { replace: true })
+			}>
 			<img src={logo} />
 			<div class={styles.stripDetails}>
 				<p>{title}</p>

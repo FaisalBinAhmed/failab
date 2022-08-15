@@ -18,7 +18,7 @@ const App: Component = () => {
 			<Header />
 			<Routes>
 				<Route path="/" component={HomeScreen} />
-				<Route path="/apps" component={Apps} />
+				{/* <Route path="/apps" component={Apps} /> */}
 				<Route path="/app/:id" component={AppDetails} />
 				<Route path="/app/:id/privacypolicy" component={Privacy} />
 				<Route path="/contact" component={Contact} />
