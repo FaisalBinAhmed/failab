@@ -10,9 +10,6 @@ import {
 	Switch,
 } from "solid-js";
 
-import tabiusHero from "../assets/tabius/tabius-hero.png";
-import tabiusLogo from "../assets/tabius/tabius-logo.jpeg";
-
 import appstore from "../assets/appstore.png";
 import playstore from "../assets/playstore.png";
 import chrome from "../assets/chrome.png";

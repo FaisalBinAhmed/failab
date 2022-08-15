@@ -15,6 +15,7 @@ import styles from "./AppDetails.module.css";
 
 import { GetStoreButton } from "../components/Carousel";
 import Features from "../components/Features";
+import SocialButton from "../components/SocialButton";
 
 export function isBadRoute(id: string) {
 	if (appNames.includes(id)) return false;
@@ -28,6 +29,8 @@ const AppDetails: Component = () => {
 
 	//TODO redirect to 404 page
 	if (isBadRoute(params.id)) return <div>404 Bad Route</div>;
+	//above wouldn't work
+
 	createEffect(() => {
 		// console.log("current param: ", params.id);
 
@@ -63,6 +66,16 @@ const AppDetails: Component = () => {
 			{appDetails()?.featurelist && (
 				<div class={styles.features}>
 					<Features appDetails={appDetails} />
+				</div>
+			)}
+			{appDetails()?.privacyInfo && (
+				<div class={styles.privacy}>
+					<h5>
+						&#x1f512;
+						<a href={`/app/${params.id}/privacypolicy`}>
+							Privacy Policy
+						</a> for {appDetails()?.title.toUpperCase()}
+					</h5>
 				</div>
 			)}
 		</div>

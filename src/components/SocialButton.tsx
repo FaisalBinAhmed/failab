@@ -1,3 +1,4 @@
+import { useNavigate } from "@solidjs/router";
 import type { Component } from "solid-js";
 
 import styles from "./SocialButton.module.css";
@@ -8,12 +9,14 @@ const SocialButton: Component<{
 	toExternal?: string;
 	toInternal?: string;
 }> = ({ title, color, toExternal, toInternal }) => {
+	const navigate = useNavigate();
+
 	function handleClick() {
 		if (toExternal) {
 			window.open(toExternal, "_blank").focus();
 			return;
 		}
-		if (toInternal) window.location = `/${toInternal}`;
+		if (toInternal) navigate(`/${toInternal}`);
 	}
 
 	return (
