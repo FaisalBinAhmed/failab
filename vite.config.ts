@@ -6,7 +6,7 @@ export default defineConfig({
 	server: {
 		port: 3000,
 	},
-	base: "/failab/", //temp as repo
+	// base: "/failab/", //temp as repo
 	build: {
 		target: "esnext",
 		outDir: "docs",
