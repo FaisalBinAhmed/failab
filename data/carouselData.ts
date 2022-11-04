@@ -214,14 +214,14 @@ Please note: Scaler does not need and should not ask for any permissions.`,
 		id: 3,
 		title: "KeyTrails",
 		heroThumb: "/assets/keytrails/kt5.png",
-		icon: "/assets/keytrails/keytrails-logo.webp",
+		icon: "/assets/keytrails/keytrails-logo.png",
 		description:
 			"Present your keystrokes on screen with style - for macOS devices",
 		color: "#2F4DB2",
 		storeLinks: [
 			{
 				storeType: "macOS",
-				link: "",
+				link: "https://apps.apple.com/us/app/keytrails/id1632266803",
 			},
 		],
 		tag: "Mac",
