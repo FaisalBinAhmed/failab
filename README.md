@@ -31,4 +31,8 @@ Your app is ready to be deployed!
 
 ## Deployment
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+Make changes in the main branch.
+Update the gh-pages branch from main.
+npm run build in the gh-pages branch.
+push origin.
+Github Actions will deploy it automatically.
