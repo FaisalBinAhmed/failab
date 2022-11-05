@@ -86,7 +86,7 @@ export const HeaderAppCard: Component<{
 	return (
 		<div
 			class={styles.stripCard}
-			onClick={() => (window.location = `/app/${title.toLowerCase()}`)}>
+			onClick={() => (window.location = `/#/app/${title.toLowerCase()}`)}>
 			<img src={logo} />
 			<div class={styles.stripDetails}>
 				<p>{title}</p>
