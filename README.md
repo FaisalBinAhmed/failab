@@ -33,6 +33,6 @@ Your app is ready to be deployed!
 
 Make changes in the main branch.
 npm run build in the branch.
-Update the gh-pages branch from main.
+this will put build files in /docs folder
 push origin.
 Github Actions will deploy it automatically.
