@@ -32,6 +32,7 @@ Your app is ready to be deployed!
 ## Deployment
 
 Make changes in the main branch.
-npm run build.
-this creates docs/ files
+npm run build in the branch.
+Update the gh-pages branch from main.
 push origin.
+Github Actions will deploy it automatically.
