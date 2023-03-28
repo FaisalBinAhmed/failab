@@ -30,7 +30,13 @@ export interface CarouselItem {
 	privacyInfo?: PrivacyData;
 }
 
-export const appNames: string[] = ["tabius", "trilby", "scaler", "keytrails"];
+export const appNames: string[] = [
+	"tabius",
+	"trilby",
+	"scaler",
+	"keytrails",
+	"cliptonite",
+];
 
 export const carouselData: CarouselItem[] = [
 	{
@@ -283,6 +289,28 @@ Please note: Scaler does not need and should not ask for any permissions.`,
 			data: `KeyTrails does not collect any user information. User preference for the app is stored within the device itself and does not leave the device.
 
 Please note: KeyTrails needs Input Monitoring permission to get your keyboard and mouse inputs from the system. Without this permission, KeyTrails can’t perform. KeyTrails never uses this data for any purposes. This data is never recorded nor it ever leaves your device. You can even block KeyTrails’ internet access for added peace of mind. Sensitive information such as passwords will never be shown by the app. In fact, macOS blocks any app to intervene such data.`,
+		},
+	},
+	{
+		id: 4,
+		title: "Cliptonite - Clipboard Manager",
+		heroThumb: "/assets/cliptonite/logo.png",
+		icon: "/assets/cliptonite/logo.png",
+		description: "Beautiful and Fast Clipboard App",
+		color: "#2F4DB2",
+		storeLinks: [
+			{
+				storeType: "macOS",
+				link: "https://apps.apple.com/us/app/keytrails/id1632266803",
+			},
+		],
+		tag: "Mac",
+		screenshots: [],
+		featurelist: [],
+		privacyInfo: {
+			lastDate: "March 28 2023",
+			data: `Cliptonite does not collect any user information.
+Please note: Cliptonite does not need and should not ask for any permissions.`,
 		},
 	},
 ];
