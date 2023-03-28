@@ -293,7 +293,7 @@ Please note: KeyTrails needs Input Monitoring permission to get your keyboard an
 	},
 	{
 		id: 4,
-		title: "Cliptonite - Clipboard Manager",
+		title: "Cliptonite",
 		heroThumb: "/assets/cliptonite/logo.png",
 		icon: "/assets/cliptonite/logo.png",
 		description: "Beautiful and Fast Clipboard App",
